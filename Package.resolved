@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "apphudsdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apphud/ApphudSDK",
+      "state" : {
+        "revision" : "8b0a05fabec1a202b4ea716391c40caf5bd3fb1a",
+        "version" : "3.4.0"
+      }
+    },
+    {
+      "identity" : "appmetrica-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/appmetrica/appmetrica-sdk-ios",
+      "state" : {
+        "revision" : "b7c28eb99c41d2c0caa9cf7d4beac7c597578188",
+        "version" : "5.8.0"
+      }
+    },
+    {
+      "identity" : "kiwi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/appmetrica/Kiwi",
+      "state" : {
+        "revision" : "a265276ad551a65c9b2e3762b0363e007b16f10e",
+        "version" : "3.0.1-spm"
+      }
+    },
+    {
+      "identity" : "kscrash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kstenerud/KSCrash",
+      "state" : {
+        "revision" : "90a0c1a139ca833281423b1d2260ebf9ae188e63",
+        "version" : "2.0.0-rc.1"
+      }
+    }
+  ],
+  "version" : 2
+}
