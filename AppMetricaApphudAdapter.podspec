@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://appmetrica.io'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.authors = { "AppMetrica" => "admin@appmetrica.io" }
-  s.source = { :git => "https://github.com/appmetrica/appmetrica-sdk-apphud-adapter-ios.git", :tag=>s.version.to_s }
+  s.source = { :git => "https://github.com/appmetrica/appmetrica-sdk-apphud-adapter-ios.git", :tag => s.version.to_s }
   
   s.ios.deployment_target = '13.0'
   s.tvos.deployment_target = '13.0'
