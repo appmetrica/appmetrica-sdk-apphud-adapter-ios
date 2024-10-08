@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "AppMetricaApphudAdapter"
-  s.version = '1.0.0'
+  s.version = '1.1.0'
   s.summary = "Automatically starts and configures Apphud within AppMetrica."
 
   s.homepage = 'https://appmetrica.io'
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   
   s.dependency 'AppMetricaCore', '~> 5.8'
   s.dependency 'AppMetricaCoreExtension', '~> 5.8'
-  s.dependency 'AppMetricaApphudObjCWrapper', '= 1.0.0'
+  s.dependency 'AppMetricaApphudObjCWrapper', '= 1.1.0'
   
   s.header_dir = s.name
   s.source_files = "#{s.name}/Sources/**/*.{h,m}"

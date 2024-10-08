@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "AppMetricaApphudObjCWrapper"
-  s.version = '1.0.0'
+  s.version = '1.1.0'
   s.summary = "Automatically starts and configures Apphud within AppMetrica."
 
   s.homepage = 'https://appmetrica.io'
