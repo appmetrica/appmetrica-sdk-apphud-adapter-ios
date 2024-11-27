@@ -30,24 +30,47 @@ enum AppMetricaApphudProduct: String, CaseIterable {
     var product: Product { .library(name: rawValue, targets: targets.map { $0.name }) }
 }
 
+let useSpmExternal = false
+
 enum ExternalDependency: String, CaseIterable {
-    case appMetricaCore = "AppMetricaCore"
+    case appMetricaCore = "appmetrica-sdk-ios"
     case apphudSDK = "ApphudSDK"
     case kiwi = "Kiwi"
-    
-    static var allDependecies: [Package.Dependency] {
-        return [.package(url: "https://github.com/apphud/ApphudSDK", .upToNextMajor(from: "3.0.0")),
-                .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", .upToNextMajor(from: "5.8.0")),
-                .package(url: "https://github.com/appmetrica/Kiwi", exact: "3.0.1-spm")]
+
+    var name: String {
+         switch self {
+            case .appMetricaCore:
+                return useSpmExternal ? "spm-external.AppMetrica" : rawValue
+            default:
+                return useSpmExternal ? ("spm-external." + rawValue) : rawValue
+        }
+    }
+
+    static var allDependecies: [Package.Dependency] { allCases.map { $0.package } }
+
+    var package: Package.Dependency {
+        switch self {
+        case .appMetricaCore: return package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", .upToNextMajor(from: "5.8.0"))
+        case .apphudSDK: return package(url: "https://github.com/apphud/ApphudSDK", .upToNextMajor(from: "3.0.0"))
+        case .kiwi: return package(url: "https://github.com/appmetrica/Kiwi", exact: "3.0.1-spm")
+        }
     }
     
     var dependency: Target.Dependency {
         switch self {
         case .appMetricaCore:
-            return .product(name: rawValue, package: "appmetrica-sdk-ios")
+            return .product(name: "AppMetricaCore", package: name)
         case .apphudSDK, .kiwi:
-            return .product(name: rawValue, package: rawValue)
+            return .product(name: rawValue, package: name)
         }
+    }
+
+    private func package(url: String, _ version: Range<Version>) -> Package.Dependency {
+        useSpmExternal ? .package(id: name, version) : .package(url: url, version)
+    }
+
+    private func package(url: String, exact: Version) -> Package.Dependency {
+        useSpmExternal ? .package(id: name, exact: exact) : .package(url: url, exact: exact)
     }
 }
 
