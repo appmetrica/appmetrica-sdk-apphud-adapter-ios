@@ -1,4 +1,5 @@
 {
+  ".":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud",
   ".gitignore":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/.gitignore",
   ".swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata",
   ".swiftpm/xcode/xcshareddata/xcschemes/AppMetricaApphudAdapter-Package.xcscheme":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/.swiftpm/xcode/xcshareddata/xcschemes/AppMetricaApphudAdapter-Package.xcscheme",
