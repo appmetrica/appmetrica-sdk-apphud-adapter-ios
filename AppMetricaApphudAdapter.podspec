@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
   
   s.swift_version = '5.0'
   
-  s.dependency 'AppMetricaCore', '~> 5.8'
-  s.dependency 'AppMetricaCoreExtension', '~> 5.8'
-  s.dependency 'AppMetricaApphudObjCWrapper', '= 1.1.0'
+  s.dependency 'AppMetricaCore', '~> 6.0'
+  s.dependency 'AppMetricaCoreExtension', '~> 6.0'
+  s.dependency 'AppMetricaApphudObjCWrapper', "= #{s.version}"
   
   s.header_dir = s.name
   s.source_files = "#{s.name}/Sources/**/*.{h,m}"

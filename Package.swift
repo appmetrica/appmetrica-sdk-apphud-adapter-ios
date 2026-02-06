@@ -50,7 +50,7 @@ enum ExternalDependency: String, CaseIterable {
 
     var package: Package.Dependency {
         switch self {
-        case .appMetricaCore: return package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", .upToNextMajor(from: "5.8.0"))
+        case .appMetricaCore: return package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", .upToNextMajor(from: "6.0.0"))
         case .apphudSDK: return package(url: "https://github.com/apphud/ApphudSDK", .upToNextMajor(from: "3.0.0"))
         case .kiwi: return package(url: "https://github.com/appmetrica/Kiwi", exact: "3.0.1-spm")
         }
