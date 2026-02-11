@@ -1,6 +1,7 @@
 
 import XCTest
 import ApphudSDK
+import AppMetricaApphudTestUtils
 @testable import AppMetricaApphudObjCWrapper
 
 final class ApphudManagerTests: XCTestCase {

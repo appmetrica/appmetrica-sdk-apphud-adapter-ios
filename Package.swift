@@ -6,6 +6,7 @@ import PackageDescription
 enum AppMetricaApphudTarget: String {
     case apphudAdapter = "AppMetricaApphudAdapter"
     case objcWrapper = "AppMetricaApphudObjCWrapper"
+    case testUtils = "AppMetricaApphudTestUtils"
     
     var name: String { rawValue }
     var testsName: String { rawValue + "Tests" }
@@ -95,6 +96,12 @@ let package = Package(
             dependencies: [],
             externalDependencies: [.appMetricaCore, .apphudSDK]
         ),
+        //MARK: - AppMetrica Apphud Test Utils -
+        .target(
+            target: .testUtils,
+            dependencies: [],
+            externalDependencies: [.appMetricaCore]
+        ),
         //MARK: - Unit tests -
         .testTarget(
             target: .apphudAdapter,
@@ -103,8 +110,8 @@ let package = Package(
         ),
         .testTarget(
             target: .objcWrapper,
-            dependencies: [.objcWrapper],
-            externalDependencies: []
+            dependencies: [.objcWrapper, .testUtils],
+            externalDependencies: [.appMetricaCore]
         ),
     ]
 )
