@@ -1,5 +1,6 @@
 
 import XCTest
+import AppMetricaApphudTestUtils
 @testable import AppMetricaApphudObjCWrapper
 
 final class ApphudStartupConfigurationTests: XCTestCase {
@@ -42,12 +43,12 @@ final class ApphudStartupConfigurationTests: XCTestCase {
     
     func testApphudEnabledSettingValue() {
         configuration.apphudEnabled = NSNumber(booleanLiteral: true)
-        var retrievedEnabled = try? mockStorage.boolNumber(forKey: ApphudStartupConfiguration.apphudEnabledKey).boolValue
+        var retrievedEnabled = try? mockStorage.boolNumber(forKey: ApphudStartupConfiguration.apphudEnabledKey)?.boolValue
         
         XCTAssertTrue(retrievedEnabled!, "Feature should be correctly saved in the storage.")
         
         configuration.apphudEnabled = nil
-        retrievedEnabled = try? mockStorage.boolNumber(forKey: ApphudStartupConfiguration.apphudEnabledKey).boolValue
+        retrievedEnabled = try? mockStorage.boolNumber(forKey: ApphudStartupConfiguration.apphudEnabledKey)?.boolValue
         XCTAssertNil(retrievedEnabled, "Feature should be nil in the storage after setting it to nil.")
     }
     

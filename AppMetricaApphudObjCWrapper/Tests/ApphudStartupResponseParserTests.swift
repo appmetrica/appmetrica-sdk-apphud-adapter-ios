@@ -1,5 +1,6 @@
 
 import XCTest
+import AppMetricaApphudTestUtils
 @testable import AppMetricaApphudObjCWrapper
 
 final class ApphudStartupResponseParserTests: XCTestCase {
