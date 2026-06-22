@@ -63,6 +63,48 @@
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AppMetricaApphudAdapter_AppMetricaApphudObjCWrapper"
+               BuildableName = "AppMetricaApphudAdapter_AppMetricaApphudObjCWrapper"
+               BlueprintName = "AppMetricaApphudAdapter_AppMetricaApphudObjCWrapper"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AppMetricaApphudAdapter_AppMetricaApphudAdapter"
+               BuildableName = "AppMetricaApphudAdapter_AppMetricaApphudAdapter"
+               BlueprintName = "AppMetricaApphudAdapter_AppMetricaApphudAdapter"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AppMetricaApphudTestUtils"
+               BuildableName = "AppMetricaApphudTestUtils"
+               BlueprintName = "AppMetricaApphudTestUtils"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
