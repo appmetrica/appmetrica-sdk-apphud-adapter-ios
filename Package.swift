@@ -5,14 +5,28 @@ import Foundation
 
 // MARK: - Dependencies
 
-let useSpmExternal = false
+func hasFile(_ path: String) -> Bool {
+    FileManager.default.fileExists(
+        atPath: URL(fileURLWithPath: #file)
+            .deletingLastPathComponent()
+            .appendingPathComponent(path)
+            .path
+    )
+}
+
+// DO NOT CHANGE DEFAULT VALUES IN TRANK
+let useAppMetricaLocal = hasFile(".spm-use-appmetrica-local") || false
+let useSpmExternal = hasFile(".spm-use-spm-external") || false
 
 struct ExternalDependency {
     let package: String
     let dependency: Package.Dependency
-    
-    init(url: String, spmExternalId: String, version: VersionSpec) {
-        if useSpmExternal {
+
+    init(url: String, spmExternalId: String, version: VersionSpec, localPath: String? = nil) {
+        if localPath != nil {
+            self.package = spmExternalId
+            self.dependency = .package(name: self.package, path: localPath!)
+        } else if useSpmExternal {
             self.package = "spm-external.\(spmExternalId)"
             self.dependency = switch version {
             case .upToNextMajor(from: let from): .package(id: package, .upToNextMajor(from: from))
@@ -26,7 +40,7 @@ struct ExternalDependency {
             }
         }
     }
-    
+
     enum VersionSpec {
         case upToNextMajor(from: Version)
         case exact(Version)
@@ -38,8 +52,9 @@ enum AppMetrica {
         url: "https://github.com/appmetrica/appmetrica-sdk-ios",
         spmExternalId: "AppMetrica",
         version: .upToNextMajor(from: "6.0.0"),
+        localPath: useAppMetricaLocal ? "../../public" : nil,
     )
- 
+
     static let dependency: Package.Dependency = dep.dependency
     static let core: Target.Dependency = .product(name: "AppMetricaCore", package: dep.package)
 }
@@ -50,7 +65,7 @@ enum ApphudSDK {
         spmExternalId: "ApphudSDK",
         version: .upToNextMajor(from: "3.0.0"),
     )
-    
+
     static let dependency: Package.Dependency = dep.dependency
     static let apphudSdk: Target.Dependency = .product(name: "ApphudSDK", package: dep.package)
 }
@@ -61,7 +76,7 @@ enum Kiwi {
         spmExternalId: "Kiwi",
         version: .exact("3.0.1-spm"),
     )
-    
+
     static let dependency: Package.Dependency = dep.dependency
     static let kiwi: Target.Dependency = .product(name: "Kiwi", package: dep.package)
 }
@@ -85,14 +100,14 @@ struct Module {
     let dependencies: [Target.Dependency]
     let hasTests: Bool
     let testDependencies: [Target.Dependency]
-    
+
     init(name: String, dependencies: [ModuleDependency], hasTests: Bool = true, testDependencies: [ModuleDependency] = []) {
         self.name = name
         self.dependencies = dependencies.map(\.asTargetDependency)
         self.hasTests = hasTests
         self.testDependencies = testDependencies.map(\.asTargetDependency)
     }
-    
+
     func toTargets() -> [Target] {
         let headerSearchPaths = [
             ".",
@@ -165,7 +180,7 @@ let testUtils = Module(
     ],
     hasTests: false,
 )
- 
+
 // MARK: - Package definition
 
 let package = Package(

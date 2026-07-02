@@ -69,3 +69,7 @@ fastbuild
 .build
 .swiftpm/xcode/xcuserdata
 .swiftpm/package.xcworkspace/xcuserdata
+
+Package.resolved
+.spm-use-appmetrica-local
+.spm-use-spm-external

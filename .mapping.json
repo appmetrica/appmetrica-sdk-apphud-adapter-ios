@@ -31,7 +31,6 @@
   "AppMetricaApphudTestUtils/Sources/include/AppMetricaApphudTestUtils/AMAStringKeyValueStorageMock.h":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/AppMetricaApphudTestUtils/Sources/include/AppMetricaApphudTestUtils/AMAStringKeyValueStorageMock.h",
   "CONTRIBUTING.md":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/CONTRIBUTING.md",
   "LICENSE":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/LICENSE",
-  "Package.resolved":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/Package.resolved",
   "Package.swift":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/Package.swift",
   "README.md":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/README.md",
   "THIRD PARTY LICENSES":"mobile/metrika/ios/appmetrica-sdk/adapters/Apphud/THIRD PARTY LICENSES"
