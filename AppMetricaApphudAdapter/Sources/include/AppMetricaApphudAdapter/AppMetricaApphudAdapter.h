@@ -1,6 +1,6 @@
 
 #if __has_include("AppMetricaApphudAdapter.h")
-    #import "AMAApphudAdapterModuleEntryPoint.h"
+    #import "AMAApphudAdapterInitializer.h"
 #else
-    #import <AppMetricaApphudAdapter/AMAApphudAdapterModuleEntryPoint.h>
+    #import <AppMetricaApphudAdapter/AMAApphudAdapterInitializer.h>
 #endif
