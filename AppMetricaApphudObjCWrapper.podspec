@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.dependency 'ApphudSDK', '~> 3.0'
-  s.dependency 'AppMetricaCore', '~> 6.0'
-  s.dependency 'AppMetricaCoreExtension', '~> 6.0'
-  s.dependency 'AppMetricaStorageUtils', '~> 6.0'
+  s.dependency 'AppMetricaCore', '~> 7.0'
+  s.dependency 'AppMetricaCoreExtension', '~> 7.0'
+  s.dependency 'AppMetricaStorageUtils', '~> 7.0'
   
   s.source_files = "#{s.name}/Sources/**/*.{swift}"
   
