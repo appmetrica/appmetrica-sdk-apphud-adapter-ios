@@ -186,8 +186,8 @@ let testUtils = Module(
 let package = Package(
     name: "AppMetricaApphudAdapter",
     platforms: [
-        .iOS(.v13),
-        .tvOS(.v13),
+        .iOS(.v15),
+        .tvOS(.v15),
     ],
     products: [
         .library(name: "AppMetricaApphudAdapter", targets: [Module.apphudAdapter]),
